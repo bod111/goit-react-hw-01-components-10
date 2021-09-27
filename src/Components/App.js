@@ -10,8 +10,16 @@ const App = () => {
   //  slr
   return (
     <>
-      <Profile user={data.user} />
-      <Statistics statistic={data.statistical} title={"Upload stats"} />
+      <Profile
+        name={data.user.name}
+        tag={data.user.tag}
+        location={data.user.location}
+        avatar={data.user.avatar}
+        stats={data.user.stats}
+      />
+      {/* <Statistics statistic={data.statistical} title={"Upload stats"} /> */}
+      <Statistics title="Upload stats" statistic={data.statistical} />;
+      <Statistics statistic={data.statistical} />;
       <FriendList friends={data.friends} />
       <TransactionHistory transactions={data.transactions} />
     </>
